@@ -30,3 +30,12 @@ console.log(infoObject)
 // Removing the properties
 delete infoObject.name
 console.log(infoObject)
+
+// Duplicate keys in objects are not allowed. 
+// If we define duplicate keys, the last key will overwrite the previous key.
+let person = {
+    name: "Nitan",
+    age: 30,
+    name: "Sudeep" // This will overwrite the previous name property
+}
+console.log(person) // This will print the object with name as Sudeep
