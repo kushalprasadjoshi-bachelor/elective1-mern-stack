@@ -8,10 +8,15 @@ import firstRoute from "./src/routes/01-firstRoutes.js";
 import requestDataRoute from "./src/routes/02-requestDataRoute.js";
 import dynamicParameterRoute from "./src/routes/03-dynamicParameterRoute.js";
 import multiDynamicParametersRoute from "./src/routes/04-multiDynamicParametersRoute.js";
+import productRoutes from "./src/routes/05-productRoutes.js";
+import userRoutes from "./src/routes/06-userRoutes.js";
+import mongoose from "mongoose";
+
 let app = express();
 
 app.listen(8000, () => {
   console.log("Application is listening at port 8000");
+  mongoose.connect("mongodb://localhost:27017");
 });
 
 /*
@@ -80,3 +85,9 @@ app.use(dynamicParameterRoute);
 
 // Multiple dynamic parameters in URLs
 app.use(multiDynamicParametersRoute);
+
+// Use product routes
+app.use("/product", productRoutes);
+
+// Use user routes
+app.use("/user", userRoutes);
