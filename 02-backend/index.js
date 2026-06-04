@@ -16,7 +16,7 @@ let app = express();
 
 app.listen(8000, () => {
   console.log("Application is listening at port 8000");
-  mongoose.connect("mongodb://localhost:27017");
+  mongoose.connect("mongodb://localhost:27017/mern-stack");
 });
 
 /*
