@@ -11,6 +11,7 @@ import multiDynamicParametersRoute from "./src/routes/04-multiDynamicParametersR
 import productRoutes from "./src/routes/05-productRoutes.js";
 import userRoutes from "./src/routes/06-userRoutes.js";
 import mongoose from "mongoose";
+import schoolRoutes from "./src/routes/07-schoolRoutes.js";
 
 let app = express();
 
@@ -91,3 +92,6 @@ app.use("/product", productRoutes);
 
 // Use user routes
 app.use("/user", userRoutes);
+
+// Use school routes
+app.use("/school", schoolRoutes);

@@ -1,27 +1,18 @@
-/*
-localhost:8000/product, post
-localhost:8000/product, get
-
-localhost:8000/product/:id, get
-localhost:8000/product/:id, patch
-localhost:8000/product/:id, delete
-*/
-
 import { Router } from "express";
-import Product from "../schema/02-productSchema.js";
+import School from "../schema/03-schoolSchema.js";
 
-const productRoutes = Router();
+const schoolRoutes = Router();
 
-productRoutes
+schoolRoutes
   .route("/")
   .post(async (req, res, next) => {
     try {
-      let result = await Product.create(req.body);
+      let result = await School.create(req.body);
 
       res.json({
         success: true,
-        message: "Product created successfully!",
-        result: result,
+        message: "School created successfully!",
+        reuslt: result,
       });
     } catch (error) {
       res.json({
@@ -32,12 +23,12 @@ productRoutes
   })
   .get(async (req, res, next) => {
     try {
-      let result = await Product.find();
+      let result = await School.find();
 
       res.json({
         success: true,
-        message: "Product fetched successfully!",
-        result: result,
+        message: "Schools fetched successfully!",
+        reuslt: result,
       });
     } catch (error) {
       res.json({
@@ -47,16 +38,16 @@ productRoutes
     }
   });
 
-productRoutes
+schoolRoutes
   .route("/:id")
   .get(async (req, res, next) => {
     try {
-      let result = await Product.findById(req.params.id);
+      let result = await School.findById(req.params.id);
 
       res.json({
         success: true,
-        message: "Product fetched successfully!",
-        result: result,
+        message: "School fetched successfully!",
+        reuslt: result,
       });
     } catch (error) {
       res.json({
@@ -67,12 +58,12 @@ productRoutes
   })
   .patch(async (req, res, next) => {
     try {
-      let result = await Product.findByIdAndUpdate(req.params.id, req.body);
+      let result = await School.findByIdAndUpdate(req.params.id, req.body);
 
       res.json({
         success: true,
-        message: "Product updated successfully!",
-        result: result,
+        message: "School updated successfully!",
+        reuslt: result,
       });
     } catch (error) {
       res.json({
@@ -81,14 +72,15 @@ productRoutes
       });
     }
   })
+
   .delete(async (req, res, next) => {
     try {
-      let result = await Product.findByIdAndDelete(req.params.id);
+      let result = await School.findByIdAndDelete(req.params.id);
 
       res.json({
         success: true,
-        message: "Product deleted successfully!",
-        result: result,
+        message: "School deleted successfully",
+        reuslt: result,
       });
     } catch (error) {
       res.json({
@@ -98,4 +90,4 @@ productRoutes
     }
   });
 
-export default productRoutes;
+export default schoolRoutes;
