@@ -4,6 +4,12 @@ const App = () => {
 }
 */
 
+import Address from "./Address";
+import Father from "./Father";
+import Mother from "./Mother";
+import Info from "./Info";
+import CosmosApp from "./CosmosApp";
+
 /*
 const App = () => {
   let a = <h1>Hello World!</h1> 
@@ -72,6 +78,7 @@ const App = () => {
 }
 */
 
+/*
 // Exercise: Create frontend with the given data
 const App = () => {
   let users = [
@@ -107,6 +114,42 @@ const App = () => {
       }
     </div>
   )
+}
+*/
+
+/*
+const App = () => {
+  return (
+    <div>
+      <Address></Address>
+      <Father></Father>
+      <Mother></Mother>
+      <Info></Info>
+    </div>
+  );
+};
+*/
+
+/*
+const App = () => {
+  return (
+    <div>
+      <Info name="Nitan" surname="Thapa" ward={1}></Info>
+      <Address country="Nepal" province="Bagmati" city="Kathmandu"></Address>
+
+      <Father name="Father" age={45}></Father>
+      <Mother name="Mother" age={40}></Mother>
+
+      <p className="success">This is success.</p>
+      <p className="warning">This is warning.</p>
+      <p className="error">This is error.</p>
+    </div>
+  );
+};
+*/
+
+const App = () => {
+  return <CosmosApp />
 }
 
 export default App;
