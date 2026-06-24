@@ -1,0 +1,22 @@
+Write the required schemas and CRUD operations for following:
+
+Employee Schema:
+- name
+- email
+- department
+- position
+- salary
+
+Book Schema:
+- title
+- author
+- isbn
+- price
+- publisher
+
+Student Schema:
+- name
+- email
+- rollNumber
+- course
+- semester
