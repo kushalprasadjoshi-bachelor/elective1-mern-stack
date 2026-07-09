@@ -15,7 +15,7 @@ schoolRoutes
         reuslt: result,
       });
     } catch (error) {
-      res.json({
+      res.status(400).json({
         success: false,
         message: error.message,
       });
@@ -31,7 +31,7 @@ schoolRoutes
         reuslt: result,
       });
     } catch (error) {
-      res.json({
+      res.status(400).json({
         success: false,
         message: error.message,
       });
@@ -50,7 +50,7 @@ schoolRoutes
         reuslt: result,
       });
     } catch (error) {
-      res.json({
+      res.status(400).json({
         success: false,
         message: error.message,
       });
@@ -66,7 +66,7 @@ schoolRoutes
         reuslt: result,
       });
     } catch (error) {
-      res.json({
+      res.status(400).json({
         success: false,
         message: error.message,
       });
@@ -83,7 +83,7 @@ schoolRoutes
         reuslt: result,
       });
     } catch (error) {
-      res.json({
+      res.status(400).json({
         success: false,
         message: error.message,
       });

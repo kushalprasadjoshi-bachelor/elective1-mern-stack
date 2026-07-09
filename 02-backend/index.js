@@ -12,6 +12,7 @@ import productRoutes from "./src/routes/05-productRoutes.js";
 import userRoutes from "./src/routes/06-userRoutes.js";
 import mongoose from "mongoose";
 import schoolRoutes from "./src/routes/07-schoolRoutes.js";
+import cors from "cors"; // Import the CORS middleware
 
 let app = express();
 
@@ -19,6 +20,9 @@ app.listen(8000, () => {
   console.log("Application is listening at port 8000");
   mongoose.connect("mongodb://localhost:27017/mern-stack");
 });
+
+app.use(cors()); // Enable CORS for all routes --> To enable cross-origin requests from the frontend to the backend.
+// This is necessary when the frontend and backend are running on different ports or domains.
 
 /*
 ========== DATABASE OPERATIONS (CRUD) ==========
