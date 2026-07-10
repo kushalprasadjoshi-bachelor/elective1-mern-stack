@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const CreateProduct = () => {
   let [name, setName] = useState("");
@@ -32,17 +33,26 @@ const CreateProduct = () => {
       data: product,
     }); */
 
-    // We need to write async function to handle the axios request and response. 
+    // We need to write async function to handle the axios request and response.
     // We will use async/await to handle the asynchronous nature of the axios request.
     try {
-        let result = await axios({
-            url: "http://localhost:8000/product",
-            method: "POST",
-            data: product,
-        });
-        console.log(result);
+      let result = await axios({
+        url: "http://localhost:8000/product",
+        method: "POST",
+        data: product,
+      });
+      console.log(result);
+
+      toast.success("Product created successfully!");
+
+      setName("");
+      setPrice("");
+      setQuantity("");
+      setDescription("");
+      
     } catch (error) {
-        console.log(error);
+      console.log(error);
+      toast.error(error.response.data.message);
     }
   };
 

@@ -1,4 +1,6 @@
+import axios from "axios";
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 const CreateUser = () => {
   let [name, setName] = useState("");
@@ -7,7 +9,7 @@ const CreateUser = () => {
   let [password, setPassword] = useState("");
   let [phone, setPhone] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent the default refresh behavior of the form submission
     console.log("Form is submitted successfully!");
 
@@ -19,6 +21,27 @@ const CreateUser = () => {
       phone: phone,
     };
     console.log(user);
+
+    try {
+      let result = await axios({
+        url: "http://localhost:8000/user",
+        method: "POST",
+        data: user,
+      });
+      console.log(result);
+
+      toast.success("User created successfully!");
+
+      setName("");
+      setAddress("");
+      setEmail("");
+      setPassword("");
+      setPhone("");
+
+    } catch (error) {
+      console.log(error);
+      toast.error(error.response.data.message);
+    }
   };
 
   return (
