@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/Read.css";
+import { toast } from "react-toastify";
 
 const ReadAllProduct = () => {
   // Hit API on page load -> useEffect() hook
@@ -8,6 +10,8 @@ const ReadAllProduct = () => {
   // Show data
 
   let [data, setData] = useState([]); // Data is an array of objects [{}, {}, {}]
+
+  let navigate = useNavigate();
 
   let getData = async () => {
     try {
@@ -55,6 +59,33 @@ const ReadAllProduct = () => {
               <p>
                 <span>Description:</span> {item.description}
               </p>
+
+              <button
+                onClick={() => {
+                  navigate(`/product/${item._id}`);
+                }}
+              >
+                View
+              </button>
+
+              <button>Update</button>
+
+              <button
+                onClick={async () => {
+                  try {
+                    let result = await axios({
+                      url: `http://localhost:8000/product/${item._id}`,
+                      method: "DELETE",
+                    });
+                    getData(); // Refresh the data after deletion
+                    toast.success("Product deleted successfully!");
+                  } catch (error) {
+                    toast.error("Unable to delete product.");
+                  }
+                }}
+              >
+                Delete
+              </button>
             </div>
           );
         })}
