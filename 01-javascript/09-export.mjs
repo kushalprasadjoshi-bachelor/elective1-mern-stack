@@ -5,7 +5,7 @@ Exporting techniques in JavaScript:
     - Can export multiple variables, functions, classes from a single file
     - Imported using curly braces in other files
 
-2. Export defaul
+2. Export default
     - Prefix by export default keyword
     - Can export only one variable, function, class from a single file
     - Imported without using curly braces in other files

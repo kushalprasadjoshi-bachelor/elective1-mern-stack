@@ -49,9 +49,8 @@ const CreateProduct = () => {
       setPrice("");
       setQuantity("");
       setDescription("");
-      
     } catch (error) {
-      console.log(error);
+      console.log(error.response);
       toast.error(error.response.data.message);
     }
   };

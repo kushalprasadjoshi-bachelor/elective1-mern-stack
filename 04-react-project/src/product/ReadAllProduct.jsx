@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import "../styles/Read.css";
 
 const ReadAllProduct = () => {
   // Hit API on page load -> useEffect() hook
@@ -35,17 +36,29 @@ const ReadAllProduct = () => {
   */
 
   return (
-    <div>
-      {data.map((item, i) => {
-        return (
-          <div key={i}>
-            <p>Name is {item.name}</p>
-            <p>Price is {item.price}</p>
-            <p>Quantity is {item.quantity}</p>
-            <p>Description is {item.description}</p>
-          </div>
-        );
-      })}
+    <div className="read-page">
+      <h2 className="read-title">All Products</h2>
+
+      <div className="read-grid">
+        {data.map((item, i) => {
+          return (
+            <div className="read-card" key={i}>
+              <p>
+                <span>Name:</span> {item.name}
+              </p>
+              <p>
+                <span>Price:</span> {item.price}
+              </p>
+              <p>
+                <span>Quantity:</span> {item.quantity}
+              </p>
+              <p>
+                <span>Description:</span> {item.description}
+              </p>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
