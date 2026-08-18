@@ -68,7 +68,13 @@ const ReadAllProduct = () => {
                 View
               </button>
 
-              <button>Update</button>
+              <button
+                onClick={() => {
+                  navigate(`/product/update/${item._id}`);
+                }}
+              >
+                Update
+              </button>
 
               <button
                 onClick={async () => {

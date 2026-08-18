@@ -19,17 +19,17 @@ const AppRoute = () => {
       <Route path="/product" element={<ReadAllProduct />} />
       <Route path="/product/create" element={<CreateProduct />} />
       <Route path="/product/:id" element={<ReadSpecificProduct />} />
-      <Route path="/product/:id/update" element={<UpdateProduct />} />
+      <Route path="/product/update/:id" element={<UpdateProduct />} />
 
       <Route path="/user" element={<ReadAllUser />} />
       <Route path="/user/create" element={<CreateUser />} />
       <Route path="/user/:id" element={<ReadSpecificUser />} />
-      <Route path="/user/:id/update" element={<UpdateUser />} />
+      <Route path="/user/update/:id" element={<UpdateUser />} />
 
       <Route path="/school" element={<ReadAllSchool />} />
       <Route path="/school/create" element={<CreateSchool />} />
       <Route path="/school/:id" element={<ReadSpecificSchool />} />
-      <Route path="/school/:id/update" element={<UpdateSchool />} />
+      <Route path="/school/update/:id" element={<UpdateSchool />} />
     </Routes>
   );
 };
